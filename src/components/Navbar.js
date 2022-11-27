@@ -39,7 +39,7 @@ const Navbar = () => {
         </Button>
       </div>
       {activeMenu && (
-        <Menu theme='dark'>
+        <Menu theme='dark' style={{ background: '#24292f' }}>
           <Menu.Item icon={<HomeOutlined />}>
             <Link to='/'>Home</Link>
           </Menu.Item>
