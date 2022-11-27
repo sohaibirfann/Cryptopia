@@ -21,12 +21,10 @@ a:hover {
 }
 
 .app {
-  /* display: flex; */
   overflow: hidden;
 }
 
 .navbar {
-  /* flex: 0.2; */
   background-color: #24292f;
 }
 
@@ -38,10 +36,8 @@ a:hover {
   padding: 20px;
 }
 .nav-container {
-  /* position: fixed; */
   display: flex;
   margin: 10px;
-  /* height: 100vh; */
   margin: 0px;
   background-color: #24292f;
 }
@@ -49,7 +45,7 @@ a:hover {
 .logo-container {
   background-color: #24292f;
   display: flex;
-  padding: 20px;
+  padding: 18px;
   align-items: center;
   width: 100%;
 }
