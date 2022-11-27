@@ -8,6 +8,9 @@ import icon from '../images/cryptopia-logo.png';
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [screenSize, setScreenSize] = useState(null);
+  const [isHome, setIsHome] = useState(false);
+  const [isCrypto, setIsCrypto] = useState(false);
+  const [isNews, setIsNews] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -33,7 +36,15 @@ const Navbar = () => {
   return (
     <div className='nav-container'>
       <div className='logo-container'>
-        <Typography.Title level={1} className='logo'>
+        <Typography.Title
+          level={1}
+          className='logo'
+          onClick={() => {
+            setIsHome(true);
+            setIsCrypto(false);
+            setIsNews(false);
+          }}
+        >
           <Link to='/'>
             <img src={icon} alt='cryptopia-logo' style={{ width: '200px' }} />
           </Link>
@@ -44,13 +55,41 @@ const Navbar = () => {
       </div>
       {activeMenu && (
         <Menu theme='dark' style={{ background: '#24292f', display: 'flex', alignItems: 'center' }}>
-          <Menu.Item icon={<HomeOutlined />} onClick={() => menuActive()}>
+          <Menu.Item
+            icon={<HomeOutlined />}
+            onClick={() => {
+              menuActive();
+              setIsHome(true);
+              setIsCrypto(false);
+              setIsNews(false);
+            }}
+            style={{ background: isHome ? '#1890FF' : 'transparent' }}
+          >
             <Link to='/'>Home</Link>
           </Menu.Item>
-          <Menu.Item icon={<FundOutlined />} onClick={() => menuActive()}>
+          <Menu.Item
+            icon={<FundOutlined />}
+            onClick={() => {
+              menuActive();
+              setIsHome(false);
+              setIsCrypto(true);
+              setIsNews(false);
+            }}
+            style={{ background: isCrypto ? '#1890FF' : 'transparent' }}
+          >
             <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
           </Menu.Item>
-          <Menu.Item icon={<BulbOutlined />} onClick={() => menuActive()}>
+          <Menu.Item
+            icon={<BulbOutlined />}
+            onClick={() => {
+              menuActive();
+              setIsHome(false);
+              setIsHome(false);
+              setIsCrypto(false);
+              setIsNews(true);
+            }}
+            style={{ background: isNews ? '#1890FF' : 'transparent' }}
+          >
             <Link to='/news'>News</Link>
           </Menu.Item>
         </Menu>
