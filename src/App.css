@@ -27,7 +27,7 @@ a:hover {
 
 .navbar {
   flex: 0.2;
-  background-color: rgb(0, 21, 41);
+  background-color: #24292f;
 }
 
 .main {
@@ -43,11 +43,11 @@ a:hover {
   margin: 10px;
   height: 100vh;
   margin: 0px;
-  background-color: rgb(0, 21, 41);
+  background-color: #24292f;
 }
 
 .logo-container {
-  background-color: #001529;
+  background-color: #24292f;
   display: flex;
   padding: 20px;
   align-items: center;
@@ -372,7 +372,7 @@ a:hover {
 }
 
 .footer {
-  background-color: #001529;
+  background-color: #24292f;
   display: flex;
   flex-direction: column;
   padding: 20px;
