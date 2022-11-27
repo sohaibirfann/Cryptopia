@@ -39,14 +39,14 @@ const Navbar = () => {
         </Button>
       </div>
       {activeMenu && (
-        <Menu theme='dark' style={{ background: '#24292f' }}>
-          <Menu.Item icon={<HomeOutlined />}>
+        <Menu theme='dark' style={{ background: '#24292f', display: 'flex', alignItems: 'center' }}>
+          <Menu.Item icon={<HomeOutlined />} onClick={() => setActiveMenu(false)}>
             <Link to='/'>Home</Link>
           </Menu.Item>
-          <Menu.Item icon={<FundOutlined />}>
+          <Menu.Item icon={<FundOutlined />} onClick={() => setActiveMenu(false)}>
             <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
           </Menu.Item>
-          <Menu.Item icon={<BulbOutlined />}>
+          <Menu.Item icon={<BulbOutlined />} onClick={() => setActiveMenu(false)}>
             <Link to='/news'>News</Link>
           </Menu.Item>
         </Menu>
