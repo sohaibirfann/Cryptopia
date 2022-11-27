@@ -19,12 +19,16 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    menuActive();
+  }, [screenSize]);
+
+  const menuActive = () => {
     if (screenSize < 768) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
     }
-  }, [screenSize]);
+  };
 
   return (
     <div className='nav-container'>
@@ -40,13 +44,13 @@ const Navbar = () => {
       </div>
       {activeMenu && (
         <Menu theme='dark' style={{ background: '#24292f', display: 'flex', alignItems: 'center' }}>
-          <Menu.Item icon={<HomeOutlined />} onClick={() => setActiveMenu(false)}>
+          <Menu.Item icon={<HomeOutlined />} onClick={() => menuActive()}>
             <Link to='/'>Home</Link>
           </Menu.Item>
-          <Menu.Item icon={<FundOutlined />} onClick={() => setActiveMenu(false)}>
+          <Menu.Item icon={<FundOutlined />} onClick={() => menuActive()}>
             <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
           </Menu.Item>
-          <Menu.Item icon={<BulbOutlined />} onClick={() => setActiveMenu(false)}>
+          <Menu.Item icon={<BulbOutlined />} onClick={() => menuActive()}>
             <Link to='/news'>News</Link>
           </Menu.Item>
         </Menu>
