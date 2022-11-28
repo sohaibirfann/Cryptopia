@@ -17,6 +17,8 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   coinPrice.reverse();
   coinTimestamp.reverse();
 
+  let color = coinPrice[coinPrice.length - 1] - coinPrice[0] > 0 ? 'rgb(52, 168, 83)' : 'rgb(234, 67, 53)';
+
   const data = {
     labels: coinTimestamp,
     datasets: [
@@ -24,8 +26,8 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
         label: 'Price in USD',
         data: coinPrice,
         fill: false,
-        backgroundColor: '#24292f',
-        borderColor: '#24292f',
+        backgroundColor: color,
+        borderColor: color,
       },
     ],
   };
