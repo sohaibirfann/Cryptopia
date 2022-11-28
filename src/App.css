@@ -126,10 +126,11 @@ a:hover {
     right: 0px;
   }
   .home-title {
-    font-size: 1.4rem !important;
+    font-size: 1.1rem !important;
   }
   .show-more {
     font-size: 1.3rem !important;
+    white-space: nowrap;
   }
 }
 
@@ -355,6 +356,10 @@ a:hover {
   margin: 20px auto 30px auto;
   width: 250px;
 }
+.search-crypto input::placeholder {
+  color: rgb(137, 139, 137);
+}
+
 .crypto-card-container {
   min-height: 65vh !important;
 }
